@@ -7,9 +7,8 @@ class Pessoa:
         return f'Olá {id(self)}'
 
 if __name__ == '__main__':
-    laiane = Pessoa(nome='Laiane')
     raquelly = Pessoa(nome='Raquelly')
-    marco = Pessoa(raquelly,laiane,  nome='Marco')
+    marco = Pessoa(raquelly, nome='Marco')
     print(Pessoa.cumprimentar(marco))
     print(id(marco))
     print(marco.cumprimentar())
@@ -17,3 +16,8 @@ if __name__ == '__main__':
     print(marco.idade)
     for filho in marco.filhos:
         print(filho.nome)
+    marco.sobrenome = 'Bentancor'
+    del marco.filhos
+    print(marco.__dict__)
+    print(raquelly.__dict__)
+
